@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "167679884756",
+    "project_id": "barangtes-582a6",
+    "storage_bucket": "barangtes-582a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167679884756:android:f6bce6f12b46563be86a41",
+        "android_client_info": {
+          "package_name": "com.example.barangtes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167679884756-2sjpa2oe501uf3qd9ei0mqp88g8agt09.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLYu7CZuadfKALl52gwura4JUTC4LZfQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167679884756-2sjpa2oe501uf3qd9ei0mqp88g8agt09.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
