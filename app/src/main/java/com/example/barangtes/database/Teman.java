@@ -9,8 +9,6 @@ public class Teman implements Serializable {
     public Teman() {
     }
 
-
-
     public Teman(String nama, String telpon) {
         this.nama = nama;
         this.telpon = telpon;
