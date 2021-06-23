@@ -1,5 +1,6 @@
 package com.example.barangtes.adapter;
 
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,43 +15,43 @@ import com.example.barangtes.R;
 import com.example.barangtes.database.Teman;
 
 public class AdapterLihatTeman extends RecyclerView.Adapter<AdapterLihatTeman.ViewHolder> {
-    private ArrayList<Teman> daftarTeman;
-    private Context context;
+    private  ArrayList<Teman> daftarTeman;
+    private  Context context;
 
-    public AdapterLihatTeman(ArrayList<Teman> temans, Context ctx) {
-
-        daftarTeman = temans;
-        context = ctx;
+    public AdapterLihatTeman(ArrayList<Teman> daftarTeman, Context context) {
+        this.daftarTeman = daftarTeman;
+        this.context = context;
     }
-    class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvTitle;
 
-        ViewHolder(View v) {
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        TextView tvNama;
+
+        ViewHolder(View v){
             super(v);
-            tvTitle = (TextView) v.findViewById(R.id.tv_namabarang);
+            tvNama = (TextView) v.findViewById(R.id.tv_nama);
         }
     }
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_teman,parent,false);
-        ViewHolder vh  = new ViewHolder(v);
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_teman,parent, false);
+        ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder,final int position) {
-        final String name = daftarTeman.get(position).getNama();
-        holder.tvTitle.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        String nama = daftarTeman.get(position).getNama();
+        holder.tvNama.setText(nama);
+
+        holder.tvNama.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View view) {
-            }
-        });
-        holder.tvTitle.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
+            public boolean onLongClick(View v) {
                 return true;
             }
         });
-        holder.tvTitle.setText(name);
+        holder.tvNama.setText(nama);
     }
 
     @Override
